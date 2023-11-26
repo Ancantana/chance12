@@ -9,5 +9,5 @@ body {
 #myCanvas {
   border: 2px solid #000;
   display: block;
-  margin: auto; /* Added this line */
+  margin: 0 auto; /* Adjusted this line */
 }
