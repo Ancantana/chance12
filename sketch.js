@@ -14,7 +14,7 @@ let startTime, endTime;
 let assignedNumber;
 
 function setup() {
-  createCanvas(100, 1080).id('myCanvas'); // Add the id attribute to the canvas
+  createCanvas(800, 500).id('myCanvas');
   displayMessage();
 }
 
@@ -36,21 +36,18 @@ function mouseReleased() {
   endTime = millis();
   calculateAssignedNumber();
   if (messageIndex < messages.length - 1) {
-    // Only display the next message if there are more messages in the array
     messageIndex++;
     displayMessage();
   }
 }
 
 function calculateAssignedNumber() {
-  let holdDuration = (endTime - startTime) / 1000; // Convert to seconds
-  let area = sq(mouseX - width / 2) + sq(mouseY - height / 2); // Area of the ellipse
+  let holdDuration = (endTime - startTime) / 1000;
+  let area = sq(mouseX - width / 2) + sq(mouseY - height / 2);
 
-  // Map area and duration to the assigned number
   assignedNumber = floor(map(area * holdDuration, 0, width * height * 10, 1, 30));
-  assignedNumber = constrain(assignedNumber, 1, 30); // Ensure the number is within the desired range
+  assignedNumber = constrain(assignedNumber, 1, 30);
 
-  // Update the message with the assigned number
   messages[6] = `Thank you :). You have been assigned a number (${assignedNumber}).`;
 }
 
@@ -60,7 +57,7 @@ function displayMessage() {
   textSize(16);
   textAlign(CENTER, CENTER);
   
-  // Explicitly set the vertical position for the text
   let textY = height / 2;
   text(messages[messageIndex], width / 2, textY);
 }
+
