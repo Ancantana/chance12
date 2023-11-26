@@ -14,7 +14,7 @@ let startTime, endTime;
 let assignedNumber;
 
 function setup() {
-  createCanvas(1920, 600).id('myCanvas'); // Add the id attribute to the canvas
+  createCanvas(1920, 1080).id('myCanvas'); // Add the id attribute to the canvas
   displayMessage();
 }
 
